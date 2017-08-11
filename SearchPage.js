@@ -26,6 +26,7 @@ export default class SearchPage extends Component {
                     title='Go'
                 />
             </View>
+            <Image source={require('./Resources/house.png')} style={styles.image}/>
         </View>
         );
     }
@@ -62,5 +63,10 @@ const styles = StyleSheet.create({
     },
     goButton: {
         color:'#48BBEC',
-    }
+    },
+    image: {
+        width: 217,
+        height: 138,
+    },
+
 });
