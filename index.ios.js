@@ -9,18 +9,10 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Text,
-  View,
   NavigatorIOS
 } from 'react-native';
 
-export default class SearchPage extends Component {
-  render() {
-    return (
-      <Text style={styles.description}> Search for houses to buy </Text>
-    );
-  }
-}
+import SearchPage from './SearchPage';
 
 
 class PropertyFinder extends Component {
@@ -39,6 +31,7 @@ class PropertyFinder extends Component {
 
 
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -46,12 +39,6 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     // backgroundColor: '#F5FCFF',
   },
-  description: {
-      fontSize: 18,
-      textAlign: 'center',
-      color: '#656565',
-      marginTop: 80,
-  }
 });
 
 AppRegistry.registerComponent('PropertyFinder', () => PropertyFinder);
