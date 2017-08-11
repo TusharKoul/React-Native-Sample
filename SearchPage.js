@@ -11,8 +11,20 @@ import {
     Image,
 } from 'react-native';
 
+
 export default class SearchPage extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            searchString: 'London'
+        };
+    }
+
     render() {
+        console.log('search render');
+        let {searchString} = this.state;
+
         return(
         <View style={styles.container}>
 
@@ -20,9 +32,11 @@ export default class SearchPage extends Component {
             <Text style={styles.description}> Search by place-name or postcode. </Text>
 
             <View style={styles.flowRight}>
-                <TextInput  style={styles.searchInput}  placeholder='Search via name or postcode'/>
+                <TextInput  style={styles.searchInput}
+                            value={searchString}
+                            placeholder='Search via name or postcode'/>
                 <Button style = {styles.goButton}
-                    onPress={() => {}}
+                    onPress={this._onSearchTextChanged}
                     title='Go'
                 />
             </View>
@@ -30,7 +44,16 @@ export default class SearchPage extends Component {
         </View>
         );
     }
+
+    // underscore indicates that the author intended this method to be private
+    _onSearchTextChanged = (event) => {
+        console.log('_onSearchTextChanged');
+        this.setState({ searchString: event.nativeEvent.text });
+        console.log('Current: '+this.state.searchString+', Next: '+event.nativeEvent.text);
+    };
+
 }
+
 
 const styles = StyleSheet.create({
     description: {
