@@ -17,13 +17,14 @@ export default class SearchPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchString: 'London'
+            searchString: 'London',
+            isLoading: false
         };
     }
 
     render() {
-        console.log('search render');
-        let {searchString} = this.state;
+        let {searchString,isLoading} = this.state;
+        const spinner = isLoading ? <ActivityIndicator size="large"/> : null;
 
         return(
         <View style={styles.container}>
@@ -34,13 +35,16 @@ export default class SearchPage extends Component {
             <View style={styles.flowRight}>
                 <TextInput  style={styles.searchInput}
                             value={searchString}
+                            onChange={this._onSearchTextChanged}
                             placeholder='Search via name or postcode'/>
-                <Button style = {styles.goButton}
-                    onPress={this._onSearchTextChanged}
-                    title='Go'
+                <Button style={styles.goButton}
+                        title='Go'
+                        onPress={this._onGoPressed}
                 />
             </View>
             <Image source={require('./Resources/house.png')} style={styles.image}/>
+
+            {spinner}
         </View>
         );
     }
@@ -51,6 +55,15 @@ export default class SearchPage extends Component {
         this.setState({ searchString: event.nativeEvent.text });
         console.log('Current: '+this.state.searchString+', Next: '+event.nativeEvent.text);
     };
+
+    _onGoPressed = (event) => {
+        let {isLoading} = this.state;
+        console.log('isLoading is '+ isLoading);
+        this.setState({
+            isLoading: !isLoading
+        })
+
+    }
 
 }
 
