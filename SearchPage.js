@@ -9,9 +9,9 @@ import {
     Button,
     ActivityIndicator,
     Image,
+    NativeModules
 } from 'react-native';
 
-import { NativeModules } from 'react-native';
 import SearchResults from './SearchResults';
 import AsyncStarCounter from './AsyncStarCounter';
 
@@ -53,7 +53,7 @@ export default class SearchPage extends Component {
 
             <Text style={styles.description}>{this.state.message}</Text>
 
-            <Button style={styles.goButton} title='Call Native Method' onPress={this._onNativeMethodPressed} />
+            <Button style={styles.goButton} title='Call Native Module Method' onPress={this._onNativeMethodPressed} />
             <Button style={styles.goButton} title='Async Star Counter' onPress={this._onAsyncButtonPressed} />
 
         </View>
@@ -118,7 +118,7 @@ export default class SearchPage extends Component {
         else {
             this.setState({ message: 'Location not recognized; please try again.'});
         }
-    }
+    };
 }
 
 function urlForQueryAndPage(key, value, pageNumber) {

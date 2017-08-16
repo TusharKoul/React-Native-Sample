@@ -48,4 +48,19 @@ RCT_REMAP_METHOD(findCalendarEvents,
 }
 
 
+#pragma mark - Events
+
+- (NSArray<NSString *> *)supportedEvents
+{
+  return @[@"EventReminder"];
+}
+
+- (void)calendarEventReminderReceived:(NSNotification *)notification
+{
+  NSString *eventName = notification.userInfo[@"name"];
+  [self sendEventWithName:@"EventReminder" body:@{@"name": eventName}];
+}
+
+
+
 @end

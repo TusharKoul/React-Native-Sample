@@ -31,6 +31,7 @@ export default class AsyncStarCounter extends Component {
         this.fetchData().done();
     }
 
+
     async fetchData() {
         const url = 'https://api.github.com/repos/facebook/react-native';
 
@@ -49,6 +50,7 @@ export default class AsyncStarCounter extends Component {
         <View style={styles.container}>
             <Text> React Native repo has {this.state.stars} stars </Text>
             <Button style={styles.goButton} title='Call Native Async Method' onPress={this._onNativeMethodPressed} />
+            <Button style={styles.goButton} title='Start receiving events from Native Module' onPress={this._onReceiveEventPressed} />
         </View>
         );
     }
@@ -69,6 +71,21 @@ export default class AsyncStarCounter extends Component {
         } catch (e) {
             console.error(e);
         }
+    };
+
+    _onEmitEventPressed = (event) => {
+        const { CalendarManager } = NativeModules;
+        const calendarManagerEmitter = new NativeEventEmitter(CalendarManager);
+
+        const subscription = calendarManagerEmitter.addListener(
+            'EventReminder',
+            (reminder) => console.log(reminder.name)
+        );
+
+
+        // To stop listening ->
+        // subscription.remove();
+
     };
 }
 

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 #import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
 
-@interface CalendarManager : NSObject <RCTBridgeModule>
+
+@interface CalendarManager : RCTEventEmitter <RCTBridgeModule>
 @end
