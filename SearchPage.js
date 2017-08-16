@@ -11,6 +11,7 @@ import {
     Image,
 } from 'react-native';
 
+import { NativeModules } from 'react-native';
 import SearchResults from './SearchResults';
 
 
@@ -51,6 +52,8 @@ export default class SearchPage extends Component {
 
             <Text style={styles.description}>{this.state.message}</Text>
 
+            <Button style={styles.goButton} title='Call Native Method' onPress={this._onNativeMethodPressed} />
+
         </View>
         );
     };
@@ -64,7 +67,13 @@ export default class SearchPage extends Component {
 
     _onGoPressed = (event) => {
         const query = urlForQueryAndPage('place_name', this.state.searchString, 1);
+        console.log(query);
         this._executeQuery(query);
+    };
+
+    _onNativeMethodPressed = (event) => {
+        let CalendarManager = NativeModules.CalendarManager;
+        CalendarManager.addEvent('Birthday Party', '4 Privet Drive, Surrey');
     };
 
     _executeQuery = (query) => {
