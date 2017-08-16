@@ -13,6 +13,7 @@ import {
 
 import { NativeModules } from 'react-native';
 import SearchResults from './SearchResults';
+import AsyncStarCounter from './AsyncStarCounter';
 
 
 export default class SearchPage extends Component {
@@ -53,6 +54,7 @@ export default class SearchPage extends Component {
             <Text style={styles.description}>{this.state.message}</Text>
 
             <Button style={styles.goButton} title='Call Native Method' onPress={this._onNativeMethodPressed} />
+            <Button style={styles.goButton} title='Async Star Counter' onPress={this._onAsyncButtonPressed} />
 
         </View>
         );
@@ -69,6 +71,14 @@ export default class SearchPage extends Component {
         const query = urlForQueryAndPage('place_name', this.state.searchString, 1);
         console.log(query);
         this._executeQuery(query);
+    };
+
+    _onAsyncButtonPressed = (event) => {
+        this.props.navigator.push({
+            title: 'Async Star Counter',
+            component: AsyncStarCounter
+            // passProps: {listings: response.listings}
+        });
     };
 
     _onNativeMethodPressed = (event) => {

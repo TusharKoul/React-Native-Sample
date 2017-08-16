@@ -31,5 +31,21 @@ RCT_REMAP_METHOD(addEventWithLocation, addEvent:(NSString *)name location:(NSStr
   RCTLogInfo(@"Pretending to create an event %@ at %@", name, location);
 }
 
+RCT_REMAP_METHOD(findCalendarEvents,
+                 findEventsWithResolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+  NSArray *events = @[@"birthday", @"new years", @"thanksgiving"];
+  if (events) {
+    resolve(events);
+  }
+  else {
+    NSError *error = [NSError errorWithDomain:@"ReactNativeModuleDomain"
+                                         code:1
+                                     userInfo:@{NSLocalizedFailureReasonErrorKey:@"error in fetching events from Calendar"}];
+    reject(@"no_events", @"There were no events", error);
+  }
+}
+
 
 @end
