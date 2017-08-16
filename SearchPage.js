@@ -73,7 +73,13 @@ export default class SearchPage extends Component {
 
     _onNativeMethodPressed = (event) => {
         let CalendarManager = NativeModules.CalendarManager;
-        CalendarManager.addEvent('Birthday Party', '4 Privet Drive, Surrey');
+        let date = new Date();
+        CalendarManager.addEventWithLocation('Birthday Party', '4 Privet Drive, Surrey');
+        CalendarManager.addEvent('Birthday Party', {
+           location: '4 Privet Drive, Surrey',
+           time: date,
+           description: 'best time ever'
+        });
     };
 
     _executeQuery = (query) => {
