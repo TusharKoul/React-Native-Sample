@@ -5,7 +5,20 @@ import { requireNativeComponent } from 'react-native';
 
 class MapView extends React.Component {
     render() {
-        return <RNTMap {...this.props}/>;
+        return (
+        <RNTMap
+            {...this.props}
+            onRegionChange={this._onRegionChange}
+        />);
+    }
+
+    _onRegionChange = (event) => {
+        if (!this.props.onRegionChange) {
+            return;
+        }
+
+        // process raw event...
+        this.props.onRegionChange(event.nativeEvent);
     }
 }
 
@@ -36,6 +49,12 @@ MapView.propTypes = {
         latitudeDelta: PropTypes.number.isRequired,
         longitudeDelta: PropTypes.number.isRequired,
     }),
+
+    /**
+     * Callback that is called continuously when the user is dragging the map.
+     */
+    onRegionChange: PropTypes.func,
+
 };
 
 

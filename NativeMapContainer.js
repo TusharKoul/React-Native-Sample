@@ -30,9 +30,18 @@ export default class NativeMapContainer extends Component {
         return(
             <View style={styles.container}>
                 <Text> native map </Text>
-                <MapView style={styles.map} zoomEnabled={false} region={region}/>
+                <MapView style={styles.map}
+                         zoomEnabled={false}
+                         region={region}
+                         onRegionChange={this._onRegionChange}
+                />
             </View>
         );
+    }
+
+    _onRegionChange = (event) => {
+        console.log("Region changed");
+        console.log(event);
     }
 }
 

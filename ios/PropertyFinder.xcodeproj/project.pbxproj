@@ -39,6 +39,7 @@
 		DB3A48341F43CCA700D7F980 /* CalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3A48331F43CCA700D7F980 /* CalendarManager.m */; };
 		DBDC3DA51F44F3D8005AB8FF /* RNTMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDC3DA41F44F3D8005AB8FF /* RNTMapManager.m */; };
 		DBF7C5811F4751E1004AF509 /* RCTConvert+MapKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF7C5801F4751E1004AF509 /* RCTConvert+MapKit.m */; };
+		DBF7C5841F4765ED004AF509 /* RNTMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF7C5831F4765ED004AF509 /* RNTMapView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -292,6 +293,8 @@
 		DBDC3DA41F44F3D8005AB8FF /* RNTMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNTMapManager.m; path = PropertyFinder/RNTMapManager.m; sourceTree = "<group>"; };
 		DBF7C57F1F4751E1004AF509 /* RCTConvert+MapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RCTConvert+MapKit.h"; path = "PropertyFinder/RCTConvert+MapKit.h"; sourceTree = "<group>"; };
 		DBF7C5801F4751E1004AF509 /* RCTConvert+MapKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RCTConvert+MapKit.m"; path = "PropertyFinder/RCTConvert+MapKit.m"; sourceTree = "<group>"; };
+		DBF7C5821F4765ED004AF509 /* RNTMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNTMapView.h; path = PropertyFinder/RNTMapView.h; sourceTree = "<group>"; };
+		DBF7C5831F4765ED004AF509 /* RNTMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNTMapView.m; path = PropertyFinder/RNTMapView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,6 +442,8 @@
 				DB3A48331F43CCA700D7F980 /* CalendarManager.m */,
 				DBF7C57F1F4751E1004AF509 /* RCTConvert+MapKit.h */,
 				DBF7C5801F4751E1004AF509 /* RCTConvert+MapKit.m */,
+				DBF7C5821F4765ED004AF509 /* RNTMapView.h */,
+				DBF7C5831F4765ED004AF509 /* RNTMapView.m */,
 			);
 			name = PropertyFinder;
 			sourceTree = "<group>";
@@ -982,6 +987,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				DBF7C5841F4765ED004AF509 /* RNTMapView.m in Sources */,
 				DB3A48341F43CCA700D7F980 /* CalendarManager.m in Sources */,
 				DBDC3DA51F44F3D8005AB8FF /* RNTMapManager.m in Sources */,
 				DBF7C5811F4751E1004AF509 /* RCTConvert+MapKit.m in Sources */,

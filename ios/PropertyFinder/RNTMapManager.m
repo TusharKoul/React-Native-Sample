@@ -10,8 +10,10 @@
 
 #import <React/RCTViewManager.h>
 #import "RCTConvert+MapKit.h"
+#import "RNTMapView.h"
 
-@interface RNTMapManager : RCTViewManager
+
+@interface RNTMapManager : RCTViewManager<MKMapViewDelegate>
 
 @end
 
@@ -21,8 +23,9 @@ RCT_EXPORT_MODULE()
 
 - (UIView *)view
 {
-  // no need to set frame etc, ReactNative will override
-  return [[MKMapView alloc] init];
+  RNTMapView *map = [RNTMapView new];
+  map.delegate = self;
+  return map;
 }
 
 
@@ -61,6 +64,32 @@ RCT_CUSTOM_VIEW_PROPERTY(region, MKCoordinateRegion, MKMapView)
   }
   
   [view setRegion:region animated:YES];
+}
+
+
+
+// EVENT Property
+
+RCT_EXPORT_VIEW_PROPERTY(onRegionChange, RCTBubblingEventBlock)
+
+
+#pragma mark - MKMapViewDelegate
+
+- (void)mapView:(RNTMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+  if (!mapView.onRegionChange) {
+    return;
+  }
+  
+  MKCoordinateRegion region = mapView.region;
+  mapView.onRegionChange(@{
+                           @"region": @{
+                               @"latitude": @(region.center.latitude),
+                               @"longitude": @(region.center.longitude),
+                               @"latitudeDelta": @(region.span.latitudeDelta),
+                               @"longitudeDelta": @(region.span.longitudeDelta),
+                               }
+                           });
 }
 
 @end
