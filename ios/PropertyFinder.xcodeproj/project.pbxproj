@@ -37,6 +37,7 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		DB3A48341F43CCA700D7F980 /* CalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3A48331F43CCA700D7F980 /* CalendarManager.m */; };
+		DBDC3DA51F44F3D8005AB8FF /* RNTMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDC3DA41F44F3D8005AB8FF /* RNTMapManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -286,6 +287,8 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		DB3A48321F43CCA700D7F980 /* CalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarManager.h; path = PropertyFinder/CalendarManager.h; sourceTree = "<group>"; };
 		DB3A48331F43CCA700D7F980 /* CalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarManager.m; path = PropertyFinder/CalendarManager.m; sourceTree = "<group>"; };
+		DBDC3DA31F44F3D8005AB8FF /* RNTMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNTMapManager.h; path = PropertyFinder/RNTMapManager.h; sourceTree = "<group>"; };
+		DBDC3DA41F44F3D8005AB8FF /* RNTMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNTMapManager.m; path = PropertyFinder/RNTMapManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -420,6 +423,8 @@
 		13B07FAE1A68108700A75B9A /* PropertyFinder */ = {
 			isa = PBXGroup;
 			children = (
+				DBDC3DA31F44F3D8005AB8FF /* RNTMapManager.h */,
+				DBDC3DA41F44F3D8005AB8FF /* RNTMapManager.m */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -973,6 +978,7 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				DB3A48341F43CCA700D7F980 /* CalendarManager.m in Sources */,
+				DBDC3DA51F44F3D8005AB8FF /* RNTMapManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

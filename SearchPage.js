@@ -14,6 +14,7 @@ import {
 
 import SearchResults from './SearchResults';
 import AsyncStarCounter from './AsyncStarCounter';
+import NativeMapContainer from './NativeMapContainer';
 
 
 export default class SearchPage extends Component {
@@ -55,6 +56,7 @@ export default class SearchPage extends Component {
 
             <Button style={styles.goButton} title='Call Native Module Method' onPress={this._onNativeMethodPressed} />
             <Button style={styles.goButton} title='Async Star Counter' onPress={this._onAsyncButtonPressed} />
+            <Button style={styles.goButton} title='Native UI Map Module' onPress={this._onNativeUIPressed} />
 
         </View>
         );
@@ -89,6 +91,14 @@ export default class SearchPage extends Component {
            location: '4 Privet Drive, Surrey',
            time: date,
            description: 'best time ever'
+        });
+    };
+
+    _onNativeUIPressed = (event) => {
+        this.props.navigator.push({
+            title: 'Native Map UI',
+            component: NativeMapContainer
+            // passProps: {listings: response.listings}
         });
     };
 
