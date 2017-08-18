@@ -23,7 +23,7 @@ export default class NativeMapContainer extends Component {
         return(
             <View style={styles.container}>
                 <Text> native map </Text>
-                <MapView style={styles.map}></MapView>
+                <MapView style={styles.map} pitchEnabled={false}/>
             </View>
         );
     }
