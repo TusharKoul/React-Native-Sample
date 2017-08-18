@@ -38,6 +38,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		DB3A48341F43CCA700D7F980 /* CalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3A48331F43CCA700D7F980 /* CalendarManager.m */; };
 		DBDC3DA51F44F3D8005AB8FF /* RNTMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDC3DA41F44F3D8005AB8FF /* RNTMapManager.m */; };
+		DBF7C5811F4751E1004AF509 /* RCTConvert+MapKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF7C5801F4751E1004AF509 /* RCTConvert+MapKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -289,6 +290,8 @@
 		DB3A48331F43CCA700D7F980 /* CalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarManager.m; path = PropertyFinder/CalendarManager.m; sourceTree = "<group>"; };
 		DBDC3DA31F44F3D8005AB8FF /* RNTMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNTMapManager.h; path = PropertyFinder/RNTMapManager.h; sourceTree = "<group>"; };
 		DBDC3DA41F44F3D8005AB8FF /* RNTMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNTMapManager.m; path = PropertyFinder/RNTMapManager.m; sourceTree = "<group>"; };
+		DBF7C57F1F4751E1004AF509 /* RCTConvert+MapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RCTConvert+MapKit.h"; path = "PropertyFinder/RCTConvert+MapKit.h"; sourceTree = "<group>"; };
+		DBF7C5801F4751E1004AF509 /* RCTConvert+MapKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RCTConvert+MapKit.m"; path = "PropertyFinder/RCTConvert+MapKit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -434,6 +437,8 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				DB3A48321F43CCA700D7F980 /* CalendarManager.h */,
 				DB3A48331F43CCA700D7F980 /* CalendarManager.m */,
+				DBF7C57F1F4751E1004AF509 /* RCTConvert+MapKit.h */,
+				DBF7C5801F4751E1004AF509 /* RCTConvert+MapKit.m */,
 			);
 			name = PropertyFinder;
 			sourceTree = "<group>";
@@ -979,6 +984,7 @@
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				DB3A48341F43CCA700D7F980 /* CalendarManager.m in Sources */,
 				DBDC3DA51F44F3D8005AB8FF /* RNTMapManager.m in Sources */,
+				DBF7C5811F4751E1004AF509 /* RCTConvert+MapKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
